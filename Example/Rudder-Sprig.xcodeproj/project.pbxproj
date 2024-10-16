@@ -330,6 +330,7 @@
 				"${BUILT_PRODUCTS_DIR}/RSCrashReporter/RSCrashReporter.framework",
 				"${BUILT_PRODUCTS_DIR}/Rudder/Rudder.framework",
 				"${BUILT_PRODUCTS_DIR}/RudderKit/RudderKit.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/UserLeapKit/UserLeapKit.framework/UserLeapKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -337,6 +338,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSCrashReporter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rudder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RudderKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UserLeapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
