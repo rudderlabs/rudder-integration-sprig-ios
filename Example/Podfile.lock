@@ -1,0 +1,35 @@
+PODS:
+  - MetricsReporter (2.0.0):
+    - RSCrashReporter (= 1.0.1)
+    - RudderKit (= 1.4.0)
+  - RSCrashReporter (1.0.1)
+  - Rudder (1.29.0):
+    - MetricsReporter (= 2.0.0)
+  - Rudder-Sprig (1.2.0):
+    - Rudder (~> 1.29)
+  - RudderKit (1.4.0)
+
+DEPENDENCIES:
+  - Rudder-Sprig (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - MetricsReporter
+    - RSCrashReporter
+    - Rudder
+    - RudderKit
+
+EXTERNAL SOURCES:
+  Rudder-Sprig:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MetricsReporter: 364b98791e868b10e9d512eb50af28d8c11e5cdb
+  RSCrashReporter: 6b8376ac729b0289ebe0908553e5f56d8171f313
+  Rudder: 7031e52a04312cbc7a70713cac25528a89e63408
+  Rudder-Sprig: b2ed94664ed4ef88a70dd124c462ade45aeafc2a
+  RudderKit: f272f9872183946452ac94cd7bb2244a71e6ca8f
+
+PODFILE CHECKSUM: 74b1e8a1b2ec5e1434c3993b3c5a6bf86fe5e6c2
+
+COCOAPODS: 1.15.2
