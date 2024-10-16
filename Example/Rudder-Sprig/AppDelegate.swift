@@ -16,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Replace the RudderConfig with the actual file name
         if let path = Bundle.main.path(forResource: "RudderConfig", ofType: "plist") {
             
             let url = URL(fileURLWithPath: path)
             guard let rudderConfig = RudderConfig.create(from: url) else { return true }
             
             let configBuilder = RSConfigBuilder()
-                .withDataPlaneUrl(rudderConfig.PROD_DATA_PLANE_URL)
+                .withDataPlaneUrl(rudderConfig.DATA_PLANE_URL)
                 .withLoglevel(RSLogLevelVerbose)
                 .withFactory(RudderSprigFactory.instance)
                 .withTrackLifecycleEvens(false)

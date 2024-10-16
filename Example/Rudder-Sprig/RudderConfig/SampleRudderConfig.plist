@@ -4,17 +4,9 @@
 <dict>
 	<key>WRITE_KEY</key>
 	<string></string>
-	<key>PROD_DATA_PLANE_URL</key>
+	<key>DATA_PLANE_URL</key>
 	<string></string>
-	<key>PROD_CONTROL_PLANE_URL</key>
-	<string></string>
-	<key>LOCAL_DATA_PLANE_URL</key>
-	<string></string>
-	<key>LOCAL_CONTROL_PLANE_URL</key>
-	<string></string>
-	<key>DEV_DATA_PLANE_URL</key>
-	<string></string>
-	<key>DEV_CONTROL_PLANE_URL</key>
+	<key>CONTROL_PLANE_URL</key>
 	<string></string>
 </dict>
 </plist>
