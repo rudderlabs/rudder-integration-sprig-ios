@@ -11,9 +11,9 @@ Questions? Please join our [Slack channel](https://resources.rudderstack.com/joi
 
 ## Integrating Sprig with the RudderStack iOS SDK
 
-> **_NOTE:_** `Rudder-Sprig` version `<SPRIG>` is compatible with the `<SPRIG>` version `<SPRIG>`. 
+> **_NOTE:_** `Rudder-Sprig` version `1.0.0` is compatible with the `UserLeapKit` version `4.22.3`. 
 
-1. Add [Sprig](<SPRIG>) as a destination in the [RudderStack dashboard](https://app.rudderstack.com/).
+1. Add [Sprig](https://app.sprig.com/) as a destination in the [RudderStack dashboard](https://app.rudderstack.com/).
 
 2. Rudder-Sprig is available through [CocoaPods](https://cocoapods.org) and [Swift Package Manager (SPM)](https://www.swift.org/package-manager/). 
 
