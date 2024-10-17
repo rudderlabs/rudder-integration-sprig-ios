@@ -7,6 +7,7 @@
 
 import Foundation
 import Rudder
+import UserLeapKit
 
 // MARK: - Rudder ServerConfig Keys
 private struct ServerConfigKey {
@@ -24,6 +25,7 @@ public class RudderSprigIntegration: NSObject {
     let config: [AnyHashable : Any]
     let client: RSClient
     let rudderConfig: RSConfig
+    var viewController: UIViewController?
     
     // MARK: - Initializer
     init(config: [AnyHashable : Any], client: RSClient, rudderConfig: RSConfig) {
@@ -53,6 +55,9 @@ extension RudderSprigIntegration {
                 RSLogger.logError("Invalid API key. Aborting sprig initialization.")
                 return
             }
+
+            // Sprig.shared.configure(withEnvironment: apiKey)
+            // RSLogger.logVerbose("Sprig SDK is initialized successfully.")
         }
     }
 }
@@ -69,6 +74,16 @@ extension RudderSprigIntegration: RSIntegration {
     }
     
     public func dump(_ message: RSMessage) {
+        switch message.type {
+            case RSMessageType.identify.rawValue:
+                self.handleIdentifyMessage(message)
+
+            case RSMessageType.track.rawValue:
+                self.handleTrackMessage(message)
+
+            default:
+                RSLogger.logWarn("SprigIntegrationFactory: MessageType(\(message.type.capitalized) is not supported")
+        }
     }
     
     public func reset() {
@@ -85,8 +100,19 @@ extension RudderSprigIntegration {
     }
     
     func handleTrackMessage(_ message: RSMessage) {
-    }
-    
-    func handleScreenMessage(_ message: RSMessage) {
+        guard let controller = self.viewController else {
+            RSLogger.logError("SprigIntegrationFactory: Dropping track event because view controller is not set")
+            return
+        }
+        
+        let payload = EventPayload(
+            eventName: message.event,
+            properties: message.properties
+        )
+        
+        Sprig.shared.trackAndPresent(
+            payload: payload,
+            from: controller
+        )
     }
 }
