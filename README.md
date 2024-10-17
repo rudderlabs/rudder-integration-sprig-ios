@@ -11,9 +11,9 @@ Questions? Please join our [Slack channel](https://resources.rudderstack.com/joi
 
 ## Integrating Sprig with the RudderStack iOS SDK
 
-> **_NOTE:_** `Rudder-Sprig` version `<SPRIG>` is compatible with the `<SPRIG>` version `<SPRIG>`. 
+> **_NOTE:_** `Rudder-Sprig` version `1.0.0` is compatible with the `UserLeapKit` version `4.22.3`. 
 
-1. Add [Sprig](<SPRIG>) as a destination in the [RudderStack dashboard](https://app.rudderstack.com/).
+1. Add [Sprig](https://app.sprig.com/) as a destination in the [RudderStack dashboard](https://app.rudderstack.com/).
 
 2. Rudder-Sprig is available through [CocoaPods](https://cocoapods.org) and [Swift Package Manager (SPM)](https://www.swift.org/package-manager/). 
 
@@ -30,13 +30,13 @@ You can also add the RudderStack iOS SDK via Swift Package Mangaer.
 
 * Go to **File** -> **Add Package**, as shown:
 
-![add_package](screenshots/<SPRIG>.png)
+![add_package](Screenshots/add_package_dependency.png)
 
 * Enter the package repository (`https://github.com/rudderlabs/rudder-integration-sprig-ios`) in the search bar.
 
 *  In **Dependency Rule**, select **Exact Version** and enter latest as the value, as shown:
 
-![add_package](screenshots/<SPRIG>.png)
+![add_package](Screenshots/add_rudder_sprig.png)
 
 * Select the project to which you want to add the package.
 
@@ -60,7 +60,7 @@ RSClient.getInstance(WRITE_KEY, config: configBuilder.build())
 ## Setup the sample iOS app
 
 1. Make a copy of the `SampleRudderConfig.plist` into the RudderConfig directory and rename it to `RudderConfig.plist`.
-2. Fill the required details e.g., `WRITE_KEY` and `PROD_DATA_PLANE_URL`.
+2. Fill the required details e.g., `WRITE_KEY` and `DATA_PLANE_URL`.
 3. Start sending the events
 
 ## Sending Events

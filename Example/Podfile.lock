@@ -5,9 +5,11 @@ PODS:
   - RSCrashReporter (1.0.1)
   - Rudder (1.29.0):
     - MetricsReporter (= 2.0.0)
-  - Rudder-Sprig (1.2.0):
+  - Rudder-Sprig (1.0.0):
     - Rudder (~> 1.29)
+    - UserLeapKit (~> 4.22.3)
   - RudderKit (1.4.0)
+  - UserLeapKit (4.22.3)
 
 DEPENDENCIES:
   - Rudder-Sprig (from `../`)
@@ -18,6 +20,7 @@ SPEC REPOS:
     - RSCrashReporter
     - Rudder
     - RudderKit
+    - UserLeapKit
 
 EXTERNAL SOURCES:
   Rudder-Sprig:
@@ -27,8 +30,9 @@ SPEC CHECKSUMS:
   MetricsReporter: 364b98791e868b10e9d512eb50af28d8c11e5cdb
   RSCrashReporter: 6b8376ac729b0289ebe0908553e5f56d8171f313
   Rudder: 7031e52a04312cbc7a70713cac25528a89e63408
-  Rudder-Sprig: b2ed94664ed4ef88a70dd124c462ade45aeafc2a
+  Rudder-Sprig: 8bba5342c4c3fa4e21fa3d49c2e71f88199dbfaf
   RudderKit: f272f9872183946452ac94cd7bb2244a71e6ca8f
+  UserLeapKit: d3ef71e5fd2d7da067ae8dd99da2a1b910db25b5
 
 PODFILE CHECKSUM: 74b1e8a1b2ec5e1434c3993b3c5a6bf86fe5e6c2
 
