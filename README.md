@@ -30,13 +30,13 @@ You can also add the RudderStack iOS SDK via Swift Package Mangaer.
 
 * Go to **File** -> **Add Package**, as shown:
 
-![add_package](screenshots/<SPRIG>.png)
+![add_package](Screenshots/add_package_dependency.png)
 
 * Enter the package repository (`https://github.com/rudderlabs/rudder-integration-sprig-ios`) in the search bar.
 
 *  In **Dependency Rule**, select **Exact Version** and enter latest as the value, as shown:
 
-![add_package](screenshots/<SPRIG>.png)
+![add_package](Screenshots/add_rudder_sprig.png)
 
 * Select the project to which you want to add the package.
 
