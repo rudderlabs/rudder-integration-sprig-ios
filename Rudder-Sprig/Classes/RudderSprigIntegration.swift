@@ -87,6 +87,8 @@ extension RudderSprigIntegration: RSIntegration {
     }
     
     public func reset() {
+        Sprig.shared.logout()
+        RSLogger.logVerbose("SprigIntegrationFactory: Sprig.shared.logout() is called")
     }
     
     public func flush() {
