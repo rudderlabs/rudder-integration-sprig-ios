@@ -96,7 +96,23 @@ extension RudderSprigIntegration: RSIntegration {
 // MARK: - Event Handlers
 
 extension RudderSprigIntegration {
+
     func handleIdentifyMessage(_ message: RSMessage) {
+        let userId = message.userId
+        guard !userId.isEmpty else {
+            RSLogger.logError("SprigIntegrationFactory: UserId is not set. Dropping identify event")
+            return
+        }
+        Sprig.shared.setUserIdentifier(userId)
+        
+        // set email address
+        if let email = message.context.traits["email"] as? String {
+            Sprig.shared.setEmailAddress(email)
+        }
+        
+        let filteredTraits: [String : Any] = filterTraits(message.context.traits)
+        
+        Sprig.shared.setVisitorAttributes(filteredTraits)
     }
     
     func handleTrackMessage(_ message: RSMessage) {
@@ -117,4 +133,35 @@ extension RudderSprigIntegration {
         )
         RSLogger.logDebug("SprigIntegrationFactory: View controller is set hence called the track Sprig.shared.trackAndPresent(payload, controller) method")
     }
+}
+
+// MARK: - Utils Method
+
+private func filterTraits(_ properties: NSDictionary?) -> [String: Any] {
+    var filteredProperties = [String: Any]()
+    
+    if let properties = properties {
+        for (key, value) in properties {
+            guard let key = key as? String else {
+                continue // Skip if the key is not a String
+            }
+            
+            if key == "email" {
+                // As email is set directly, ignoring this value
+                continue
+            }
+            
+            if key.count < 256 && !key.hasPrefix("!") {
+                if value is String || value is Bool || value is Double || value is Int {
+                    filteredProperties[key] = value
+                } else {
+                    RSLogger.logWarn("\(value) is not a valid property value. Only String, Bool, Double and Int are accepted as valid attributes. Ignoring property.")
+                }
+            } else {
+                RSLogger.logWarn("\(key) is not a valid property name. Property names must be less than 256 characters and cannot start with a '!'. Ignoring property.")
+            }
+        }
+    }
+    
+    return filteredProperties
 }
