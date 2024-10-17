@@ -60,7 +60,7 @@ RSClient.getInstance(WRITE_KEY, config: configBuilder.build())
 ## Setup the sample iOS app
 
 1. Make a copy of the `SampleRudderConfig.plist` into the RudderConfig directory and rename it to `RudderConfig.plist`.
-2. Fill the required details e.g., `WRITE_KEY` and `PROD_DATA_PLANE_URL`.
+2. Fill the required details e.g., `WRITE_KEY` and `DATA_PLANE_URL`.
 3. Start sending the events
 
 ## Sending Events
