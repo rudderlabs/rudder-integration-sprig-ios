@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        // Pass ViewController instance to RudderSprigFactory. As Sprig SDK requires this instance for the track event.
+        // Pass ViewController instance to RudderSprigFactory. As Sprig SDK requires this to display the servey.
         RudderSprigFactory.instance.setViewController(self)
     }
     
