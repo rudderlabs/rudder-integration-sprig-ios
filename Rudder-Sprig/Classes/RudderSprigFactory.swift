@@ -31,7 +31,7 @@ public class RudderSprigFactory: NSObject, RSIntegrationFactory {
         return integration
     }
     
-    public func addViewController(_ viewController: UIViewController) {
+    public func setViewController(_ viewController: UIViewController) {
         self.viewController = viewController
         updateViewController()
     }
