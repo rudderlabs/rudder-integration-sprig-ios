@@ -100,19 +100,21 @@ extension RudderSprigIntegration {
     }
     
     func handleTrackMessage(_ message: RSMessage) {
-        guard let controller = self.viewController else {
-            RSLogger.logError("SprigIntegrationFactory: Dropping track event because view controller is not set")
-            return
-        }
-        
         let payload = EventPayload(
             eventName: message.event,
             properties: message.properties
         )
         
+        guard let controller = self.viewController else {
+            Sprig.shared.track(payload: payload)
+            RSLogger.logDebug("SprigIntegrationFactory: View controller is not set hence called the track Sprig.shared.track(payload) method")
+            return
+        }
+        
         Sprig.shared.trackAndPresent(
             payload: payload,
             from: controller
         )
+        RSLogger.logDebug("SprigIntegrationFactory: View controller is set hence called the track Sprig.shared.trackAndPresent(payload, controller) method")
     }
 }
