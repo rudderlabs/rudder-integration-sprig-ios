@@ -11,7 +11,7 @@ import UserLeapKit
 
 // MARK: - Rudder ServerConfig Keys
 private struct ServerConfigKey {
-    static let apiKey = "apiKey"
+    static let environmentId = "environmentId"
     
     private init() {}
 }
@@ -50,14 +50,13 @@ extension RudderSprigIntegration {
             RSLogger.logError("Destination configuration is empty. Aborting sprig initialization.")
             return
         } else {
-            
-            guard let apiKey = config[ServerConfigKey.apiKey] as? String, !apiKey.isEmpty else {
+            guard let environmentId = config[ServerConfigKey.environmentId] as? String, !environmentId.isEmpty else {
                 RSLogger.logError("Invalid API key. Aborting sprig initialization.")
                 return
             }
 
-            // Sprig.shared.configure(withEnvironment: apiKey)
-            // RSLogger.logVerbose("Sprig SDK is initialized successfully.")
+            Sprig.shared.configure(withEnvironment: environmentId)
+            RSLogger.logVerbose("Sprig SDK is initialized successfully.")
         }
     }
 }
