@@ -43,6 +43,6 @@ public class RudderSprigFactory: NSObject, RSIntegrationFactory {
     
     // MARK: - Key
     public func key() -> String {
-        "Firebase"
+        "Sprig"
     }
 }
