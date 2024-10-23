@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="_ViewController" sceneMemberID="viewController">
+                <viewController id="whP-gf-Uak" customClass="ViewController" customModule="Rudder_Sprig_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
@@ -20,30 +20,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="67" translatesAutoresizingMaskIntoConstraints="NO" id="G2l-bR-g1g">
-                                <rect key="frame" x="156" y="307.66666666666669" width="81" height="237.00000000000006"/>
+                                <rect key="frame" x="90.000000000000014" y="257" width="213.33333333333337" height="338.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWi-bE-qc8">
-                                        <rect key="frame" x="0.0" y="0.0" width="81" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="213.33333333333334" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Identify"/>
                                         <connections>
-                                            <action selector="identifyAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="LeM-3n-xUk"/>
+                                            <action selector="identify:" destination="whP-gf-Uak" eventType="touchUpInside" id="hhb-V7-ifP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K52-jD-an8">
-                                        <rect key="frame" x="0.0" y="101.33333333333331" width="81" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="101.33333333333331" width="213.33333333333334" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Track"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Track Without Properties"/>
                                         <connections>
-                                            <action selector="trackAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="Zix-sE-rF7"/>
+                                            <action selector="trackWithoutProperties:" destination="whP-gf-Uak" eventType="touchUpInside" id="jK2-02-Lzk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3S-E9-XeC">
+                                        <rect key="frame" x="0.0" y="202.66666666666669" width="213.33333333333334" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Track With Properties"/>
+                                        <connections>
+                                            <action selector="trackWithProperties:" destination="whP-gf-Uak" eventType="touchUpInside" id="1iF-TU-ppJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-OH-92g">
-                                        <rect key="frame" x="0.0" y="202.66666666666663" width="81" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="304" width="213.33333333333334" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Reset"/>
                                         <connections>
-                                            <action selector="resetAction:" destination="whP-gf-Uak" eventType="touchUpInside" id="BIm-FW-uOd"/>
+                                            <action selector="reset:" destination="whP-gf-Uak" eventType="touchUpInside" id="OGc-0g-DwE"/>
                                         </connections>
                                     </button>
                                 </subviews>
