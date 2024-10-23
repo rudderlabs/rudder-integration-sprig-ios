@@ -12,20 +12,37 @@ import Rudder
 @objcMembers
 public class RudderSprigFactory: NSObject, RSIntegrationFactory {
     
-    // MARK: - Instance
-    public static let instance: RudderSprigFactory = RudderSprigFactory()
+    // MARK: - Singleton Instance
+    public static let instance = RudderSprigFactory()
+    
+    private var sprigIntegration: RudderSprigIntegration?
+    private var viewController: UIViewController?
     
     // MARK: - Initializer
-    public func initiate(_ config: [AnyHashable : Any], client: RSClient, rudderConfig: RSConfig) -> any RSIntegration {
+    private override init() {}
+    
+    public func initiate(_ config: [AnyHashable: Any], client: RSClient, rudderConfig: RSConfig) -> any RSIntegration {
         RSLogger.logDebug("Creating RudderSprigIntegrationFactory")
         
-        return RudderSprigIntegration(config: config, client: client, rudderConfig: rudderConfig)
+        let integration = RudderSprigIntegration(config: config, client: client, rudderConfig: rudderConfig)
+        self.sprigIntegration = integration
+        updateViewController()
+        
+        return integration
+    }
+    
+    public func setViewController(_ viewController: UIViewController) {
+        self.viewController = viewController
+        updateViewController()
+    }
+    
+    // MARK: - Helper
+    private func updateViewController() {
+        sprigIntegration?.viewController = viewController
     }
     
     // MARK: - Key
     public func key() -> String {
-        return "Sprig"
+        "Sprig"
     }
-    
-    private override init() {}
 }

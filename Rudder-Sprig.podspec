@@ -5,8 +5,8 @@ package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 rudder_sdk_version = '~> 1.29'
 deployment_target = '13.0'
 
-sprig_sdk_name = ''
-sprig_sdk_version = '~> <SPRIG>'
+sprig_sdk_name = 'UserLeapKit'
+sprig_sdk_version = '~> 4.22.3'
 
 Pod::Spec.new do |s|
   s.name             = 'Rudder-Sprig'
@@ -41,6 +41,6 @@ Pod::Spec.new do |s|
   end
   
   s.dependency 'Rudder', rudder_sdk_version
-  # s.dependency sprig_sdk_name, sprig_sdk_version
+  s.dependency sprig_sdk_name, sprig_sdk_version
   
 end
