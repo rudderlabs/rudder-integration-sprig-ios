@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Rudder-Sprig",
     platforms: [
-        .iOS("13.0")
+        .iOS("15.0")
     ],
     products: [
         .library(
@@ -14,7 +14,7 @@ let package = Package(
             targets: ["Rudder-Sprig"]),
     ],
     dependencies: [
-        .package(name: "UserLeapKit", url: "https://github.com/UserLeap/userleap-ios-sdk-releases", .exact("4.22.3")),
+        .package(name: "UserLeapKit", url: "https://github.com/UserLeap/userleap-ios-sdk-releases", .upToNextMajor(from: "4.29.0")),
         .package(name: "Rudder", url: "https://github.com/rudderlabs/rudder-sdk-ios", "1.29.0"..<"2.0.0")
     ],
     targets: [
