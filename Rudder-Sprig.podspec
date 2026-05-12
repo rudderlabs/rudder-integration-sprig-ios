@@ -3,10 +3,10 @@ require 'json'
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 rudder_sdk_version = '~> 1.29'
-deployment_target = '13.0'
+deployment_target = '15.0'
 
 sprig_sdk_name = 'UserLeapKit'
-sprig_sdk_version = '~> 4.22.3'
+sprig_sdk_version = '~> 4.29'
 
 Pod::Spec.new do |s|
   s.name             = 'Rudder-Sprig'
