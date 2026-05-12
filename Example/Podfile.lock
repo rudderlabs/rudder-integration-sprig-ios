@@ -7,9 +7,9 @@ PODS:
     - MetricsReporter (= 2.0.0)
   - Rudder-Sprig (1.0.0):
     - Rudder (~> 1.29)
-    - UserLeapKit (~> 4.22.3)
+    - UserLeapKit (~> 4.29)
   - RudderKit (1.4.0)
-  - UserLeapKit (4.22.3)
+  - UserLeapKit (4.30.0)
 
 DEPENDENCIES:
   - Rudder-Sprig (from `../`)
@@ -30,10 +30,10 @@ SPEC CHECKSUMS:
   MetricsReporter: 364b98791e868b10e9d512eb50af28d8c11e5cdb
   RSCrashReporter: 6b8376ac729b0289ebe0908553e5f56d8171f313
   Rudder: 7031e52a04312cbc7a70713cac25528a89e63408
-  Rudder-Sprig: 8bba5342c4c3fa4e21fa3d49c2e71f88199dbfaf
+  Rudder-Sprig: 6cdc3125785df0c7519efe908dc4e49b48ee5d4b
   RudderKit: f272f9872183946452ac94cd7bb2244a71e6ca8f
-  UserLeapKit: d3ef71e5fd2d7da067ae8dd99da2a1b910db25b5
+  UserLeapKit: 357bc3d94f8eaa75aa963b408862f819e43fa245
 
-PODFILE CHECKSUM: 74b1e8a1b2ec5e1434c3993b3c5a6bf86fe5e6c2
+PODFILE CHECKSUM: f5d10411230661dbab5797294320b1cb57fd5c47
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

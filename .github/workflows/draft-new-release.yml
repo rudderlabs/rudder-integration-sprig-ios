@@ -77,11 +77,6 @@ jobs:
             -f ref="refs/heads/$branch_name" \
             -f sha="$BASE_SHA"
 
-      - name: Checkout release branch
-        run: |
-          git fetch origin
-          git checkout ${{ steps.create-release.outputs.branch_name }}
-
       - name: Update changelog & bump version
         id: finish-release
         env:
