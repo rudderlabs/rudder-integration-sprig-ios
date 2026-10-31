@@ -5,13 +5,14 @@ on:
     - cron: '0 0 * * 1'
   workflow_dispatch:
 
-permissions:
-  contents: read
-  issues: write
+permissions: {}
 
 jobs:
   check-outdated-pods:
     runs-on: macos-latest
+    permissions:
+      contents: read # actions/checkout
+      issues: write # github-action-updated-pods-notifier creates the issue
     name: Check outdate pods and create issue if it doesn't exist
     steps:
       - name: Harden the runner (Audit all outbound calls)
@@ -20,6 +21,8 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Check outdated pods and create issue
         id: check-outdated-pods-and-create-issue
