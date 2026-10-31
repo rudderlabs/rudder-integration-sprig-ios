@@ -7,10 +7,12 @@ on:
     types:
       - closed
 
+permissions: {}
+
 jobs:
   release:
-    permissions:
-      contents: read  # GitHub App token handles release writes
+    # The release App token creates the release and deletes the branch; GITHUB_TOKEN needs no scope.
+    permissions: {}
     name: Publish new release
     runs-on: ubuntu-latest
     if: startsWith(github.event.pull_request.head.ref, 'release/') && github.event.pull_request.merged == true # only merged pull requests must trigger this job
