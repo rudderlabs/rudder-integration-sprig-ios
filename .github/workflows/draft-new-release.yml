@@ -3,13 +3,12 @@ name: Draft new release
 on:
   workflow_dispatch
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   draft-new-release:
-    permissions:
-      contents: read  # to read repository contents
+    # The release App token does every read and write; GITHUB_TOKEN needs no scope.
+    permissions: {}
     name: Draft a new release
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/heads/fix/') || startsWith(github.ref, 'refs/heads/feat/')
@@ -33,6 +32,8 @@ jobs:
         with:
           token: ${{ steps.generate-token.outputs.token }}
           fetch-depth: 0
+          # Later steps write through the API, not git push. git fetch works anonymously on this public repo.
+          persist-credentials: false
 
       - name: Set Node 16
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
