@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/rudderlabs/rudder-integration-sprig-ios/compare/v1.1.0...v1.1.1) (2026-11-18)
+
+
+### Bug Fixes
+
+* sdk-5228 correct ios release workflows ([4011d5c](https://github.com/rudderlabs/rudder-integration-sprig-ios/commit/4011d5cf93ebff38347dc869eabcd52098d265ed))
+* sdk-5228 use app token for branch deletion ([374df77](https://github.com/rudderlabs/rudder-integration-sprig-ios/commit/374df77918ec77d1a652be9d12c03bc43cbcccac))
+
 ## 1.1.0 (2026-05-12)
 
 
