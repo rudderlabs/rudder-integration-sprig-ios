@@ -20,7 +20,7 @@ Questions? Please join our [Slack channel](https://resources.rudderstack.com/joi
 
 ## Integrating Sprig with the RudderStack iOS SDK
 
-> **_NOTE:_** `Rudder-Sprig` version `1.1.0` is compatible with the `UserLeapKit` version `4.22.3`. 
+> **_NOTE:_** `Rudder-Sprig` version `1.1.1` is compatible with `UserLeapKit` version `4.29.0` and later `4.x` versions. 
 
 1. Add [Sprig](https://app.sprig.com/) as a destination in the [RudderStack dashboard](https://app.rudderstack.com/).
 
