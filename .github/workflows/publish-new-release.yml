@@ -11,7 +11,7 @@ permissions: {}
 
 jobs:
   release:
-    # The release App token creates the release and deletes the branch; GITHUB_TOKEN needs no scope.
+    # The release App token creates the release.
     permissions: {}
     name: Publish new release
     runs-on: ubuntu-latest
@@ -56,11 +56,3 @@ jobs:
             --title "$TAG" \
             --generate-notes \
             --latest
-
-      - name: Delete release branch
-        uses: koj-co/delete-merged-action@63a03c35810a8a7d4840d18793c0f68ff8b59450 # master
-        if: startsWith(github.event.pull_request.head.ref, 'release/')
-        with:
-          branches: 'release/*'
-        env:
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
